@@ -1,6 +1,6 @@
 # MySQL Journey
 
-In this repository, I coded along and learned with Alex The Analyst MySQL Tutorial.
+In this repository, I coded along and learned with Alex The Analyst's MySQL Tutorial.
 
 ## This enables me to learn SQL skills such as: 
 
