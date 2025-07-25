@@ -27,7 +27,7 @@ This project involves:
 
 ---
 
-## 📂 Source Data
+## 📂 Source Data - [Kaggle](https://www.kaggle.com/datasets/andrexibiza/grocery-sales-dataset?select=products.csv)
 
 Seven CSV files simulating a retail sales system:
 
