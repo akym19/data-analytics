@@ -74,15 +74,18 @@ We aim to deliver insights into:
 
 ## 📌 Folder Structure
 
-📁 /sql-data-warehouse-project
-├── 📂 data/ # Raw CSV files
-├── 📂 sql/ # SQL scripts for each layer
-│ ├── bronze_ingestion.sql
-│ ├── silver_cleaning.sql
-│ ├── gold_modeling.sql
-│ └── analysis_queries.sql
-├── 📂 diagrams/ # ERDs and architecture diagrams
-└── README.md # This file
+## 📁 Folder Structure
+
+```text
+/sql-data-warehouse-project
+├── data/                   # Raw CSV files
+├── sql/                    # SQL scripts for each layer
+│   ├── bronze_ingestion.sql
+│   ├── silver_cleaning.sql
+│   ├── gold_modeling.sql
+│   └── analysis_queries.sql
+├── diagrams/               # ERDs and architecture diagrams
+└── README.md               # This file
 
 
 ---
