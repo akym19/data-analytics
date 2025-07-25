@@ -75,8 +75,8 @@ We aim to deliver insights into:
 ## 📁 Folder Structure
 
 ```
-📁 /sql-data-warehouse-project
-├── 📂 datasets/
+📁 Grocery_Sales
+├── 📂 datasets/ # Sales file is too large (500MB) Please see link above
 ├── 📂 scripts/
 │ ├── 📂 bronze
 │ ├── 📂 silver
