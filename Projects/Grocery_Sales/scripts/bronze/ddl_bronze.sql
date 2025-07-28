@@ -60,6 +60,7 @@ CREATE TABLE bronze.employees (
 	LastName NVARCHAR(50),
 	BirthDate DATETIME,
 	Gender NVARCHAR(50),
+	CityID INT,
 	HireDate NVARCHAR(50)
 );
 
