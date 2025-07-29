@@ -23,7 +23,7 @@ CREATE TABLE bronze.cities (
 	CityID INT,
 	CityName NVARCHAR(50),
 	Zipcode INT,
-	Country NVARCHAR(50)
+	Country INT
 );
 
 IF OBJECT_ID ('bronze.countries', 'U') IS NOT NULL
@@ -61,7 +61,7 @@ CREATE TABLE bronze.employees (
 	BirthDate DATETIME,
 	Gender NVARCHAR(50),
 	CityID INT,
-	HireDate NVARCHAR(50)
+	HireDate DATETIME
 );
 
 IF OBJECT_ID ('bronze.products', 'U') IS NOT NULL
