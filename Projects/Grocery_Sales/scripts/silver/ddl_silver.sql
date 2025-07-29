@@ -97,7 +97,7 @@ CREATE TABLE silver.sales (
 	ProductID INT,
 	Quantity INT,
 	Discount DECIMAL(10,1),
-	TotalPrice DECIMAL(10,1),
+	TotalPrice DECIMAL(10,4),
 	SalesDate DATETIME,
 	TransactionNumber NVARCHAR(50),
 	CreateDate DATETIME2 DEFAULT GETDATE()
