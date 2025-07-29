@@ -1,97 +1,89 @@
 /*
 	Script Purpose:
-		Creates the tables in the bronze schema.
+		Creates a stored procedure to insert data to the bronze tables in the 'GrocerDB' database
 
 	WARNING:
-		This script drops and recreates the tables if they already exists.
+		This stored procedure truncates the rows in the tables. Proceed with caution.
 */
+---------------------------------------------------------------------------------------------------------------------
+CREATE OR ALTER PROCEDURE bronze.load_bronze_data AS
+BEGIN
+	TRUNCATE TABLE bronze.categories;
 
-IF OBJECT_ID ('bronze.categories', 'U') IS NOT NULL
-DROP TABLE bronze.categories;
-GO
+	BULK INSERT bronze.categories
+	FROM 'C:\Users\raffy\Documents\Data Analytics\SQL\SQL Project\Grocery Sales\datasets\categories.csv'
+	WITH (
+		FIRSTROW = 2,
+		FIELDTERMINATOR = ',',
+		ROWTERMINATOR = '0x0a',
+		TABLOCK
+	);
+	---------------------------------------------------------------------------------------------------------------------
+	TRUNCATE TABLE bronze.cities;
 
-CREATE TABLE bronze.categories (
-	CategoryID INT,
-	CategoryName NVARCHAR(50)
-);
+	BULK INSERT bronze.cities
+	FROM 'C:\Users\raffy\Documents\Data Analytics\SQL\SQL Project\Grocery Sales\datasets\cities.csv'
+	WITH (
+		FIRSTROW = 2,
+		FIELDTERMINATOR = ',',
+		ROWTERMINATOR = '0x0a',
+		TABLOCK
+	);
+	---------------------------------------------------------------------------------------------------------------------
+	TRUNCATE TABLE bronze.countries;
 
-IF OBJECT_ID ('bronze.cities', 'U') IS NOT NULL
-DROP TABLE bronze.cities;
-GO
+	BULK INSERT bronze.countries
+	FROM 'C:\Users\raffy\Documents\Data Analytics\SQL\SQL Project\Grocery Sales\datasets\countries.csv'
+	WITH (
+		FIRSTROW = 2,
+		FIELDTERMINATOR = ',',
+		ROWTERMINATOR = '0x0a',
+		TABLOCK
+	);
+	---------------------------------------------------------------------------------------------------------------------
+	TRUNCATE TABLE bronze.customers;
 
-CREATE TABLE bronze.cities (
-	CityID INT,
-	CityName NVARCHAR(50),
-	Zipcode INT,
-	Country INT
-);
+	BULK INSERT bronze.customers
+	FROM 'C:\Users\raffy\Documents\Data Analytics\SQL\SQL Project\Grocery Sales\datasets\customers.csv'
+	WITH (
+		FIRSTROW = 2,
+		FIELDTERMINATOR = ',',
+		ROWTERMINATOR = '0x0a',
+		TABLOCK
+	);
+	---------------------------------------------------------------------------------------------------------------------
+	TRUNCATE TABLE bronze.employees;
 
-IF OBJECT_ID ('bronze.countries', 'U') IS NOT NULL
-DROP TABLE bronze.countries;
-GO
+	BULK INSERT bronze.employees
+	FROM 'C:\Users\raffy\Documents\Data Analytics\SQL\SQL Project\Grocery Sales\datasets\employees.csv'
+	WITH (
+		FIRSTROW = 2,
+		FIELDTERMINATOR = ',',
+		ROWTERMINATOR = '0x0a',
+		TABLOCK
+	);
+	---------------------------------------------------------------------------------------------------------------------
+	TRUNCATE TABLE bronze.products;
 
-CREATE TABLE bronze.countries (
-	CountryID INT,
-	CountryName NVARCHAR(50),
-	CountryCode NVARCHAR(2)
-);
+	BULK INSERT bronze.products
+	FROM 'C:\Users\raffy\Documents\Data Analytics\SQL\SQL Project\Grocery Sales\datasets\products.csv'
+	WITH (
+		FIRSTROW = 2,
+		FIELDTERMINATOR = ',',
+		ROWTERMINATOR = '0x0a',
+		FORMAT = 'CSV',
+		FIELDQUOTE = '"',
+		TABLOCK
+	);
+	---------------------------------------------------------------------------------------------------------------------
+	TRUNCATE TABLE bronze.sales;
 
-IF OBJECT_ID ('bronze.customers', 'U') IS NOT NULL
-DROP TABLE bronze.customers;
-GO
-
-CREATE TABLE bronze.customers (
-	CustomerID INT,
-	FirstName NVARCHAR(50),
-	MiddleInitial NVARCHAR(4),
-	LastName NVARCHAR(50),
-	CityID INT,
-	Address NVARCHAR(50)
-);
-
-IF OBJECT_ID ('bronze.employees', 'U') IS NOT NULL
-DROP TABLE bronze.employees;
-GO
-
-CREATE TABLE bronze.employees (
-	EmployeeID INT,
-	FirstName NVARCHAR(50),
-	MiddleInitial NVARCHAR(1),
-	LastName NVARCHAR(50),
-	BirthDate DATETIME,
-	Gender NVARCHAR(50),
-	CityID INT,
-	HireDate DATETIME
-);
-
-IF OBJECT_ID ('bronze.products', 'U') IS NOT NULL
-DROP TABLE bronze.products;
-GO
-
-CREATE TABLE bronze.products (
-	ProductID INT,
-	ProductName NVARCHAR(50),
-	Price DECIMAL(10,5),
-	CategoryID INT,
-	Class NVARCHAR(50),
-	ModifyDate NVARCHAR(50),
-	Resistant NVARCHAR(50),
-	IsAllergic NVARCHAR(50),
-	VitalityDays DECIMAL(10,5),
-)
-
-IF OBJECT_ID ('bronze.sales', 'U') IS NOT NULL
-DROP TABLE bronze.sales;
-GO
-
-CREATE TABLE bronze.sales (
-	SalesID INT,
-	SalesPersonID INT,
-	CustomerID INT,
-	ProductID INT,
-	Quantity INT,
-	Discount DECIMAL(10,5),
-	TotalPrice DECIMAL(10,5),
-	SalesDate DATETIME,
-	TransactionNumber NVARCHAR(50)
-)
+	BULK INSERT bronze.sales
+	FROM 'C:\Users\raffy\Documents\Data Analytics\SQL\SQL Project\Grocery Sales\datasets\sales.csv'
+	WITH (
+		FIRSTROW = 2,
+		FIELDTERMINATOR = ',',
+		ROWTERMINATOR = '0x0a',
+		TABLOCK
+	);
+END
