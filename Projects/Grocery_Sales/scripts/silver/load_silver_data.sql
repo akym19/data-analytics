@@ -6,7 +6,7 @@
 		This stored procedure truncates the rows in the tables. Proceed with caution.
 */
 ---------------------------------------------------------------------------------------------------------------------
-CREATE OR ALTER PROCEDURE bronze.load_silver_data AS
+CREATE OR ALTER PROCEDURE silver.load_silver_data AS
 BEGIN
 	TRUNCATE TABLE silver.categories;
 
