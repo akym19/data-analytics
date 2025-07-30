@@ -107,7 +107,6 @@ GO
 
 CREATE VIEW gold.fact_sales AS
 	SELECT
-		TOP 1000
 		s.SalesID,
 		e.EmployeeKey,
 		c.CustomerKey,
