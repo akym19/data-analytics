@@ -1,3 +1,5 @@
+https://github.com/user-attachments/assets/87a7907d-7bff-475d-baf7-2e5e18c52845
+
 # 🧠 Uber Ride Performance 2024 Data Warehouse and Power BI Analysis Portfolio Project
 
 Welcome to my Data Warehouse and Analytics Portfolio Project! 📊
