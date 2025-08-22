@@ -96,5 +96,4 @@ We aim to deliver insights into:
 
 ## 📬 Contact
 
-For questions or feedback, feel free to reach out via [LinkedIn](#) or GitHub Issues.
-
+For questions or feedback, feel free to reach out via [LinkedIn](#https://www.linkedin.com/in/raffy-jay-dayag/).
