@@ -31,17 +31,6 @@ This project involves:
 
 ## 📂 Source Data - [Kaggle](https://www.kaggle.com/datasets/yashdevladdha/uber-ride-analytics-dashboard)
 
-Seven CSV files simulating a retail sales system:
-
-- `categories.csv` – Product category info
-- `cities.csv` – City and region data
-- `countries.csv` – Country details
-- `customers.csv` – Customer demographic data
-- `employees.csv` – Employee profiles
-- `products.csv` – Product catalog with allergy/resistance/vitality attributes
-- `sales.csv` – Transaction-level sales data
-
----
 This project uses a single raw dataset simulating Uber ride bookings. The dataset contains transaction-level booking details.
 
 From this single source, the data was normalized and split into fact and dimension tables to enable star-schema modeling in the Gold Layer:
