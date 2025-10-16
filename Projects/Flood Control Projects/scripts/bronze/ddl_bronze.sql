@@ -23,7 +23,7 @@ CREATE TABLE bronze.flood_control_projects (
 	ContractorID INT,
 	SourceOfFundsID INT,
 	ProjectName NVARCHAR(610),
-	ProjectCode NVARCHAR(20),
+	ProjectCode NVARCHAR(30),
 	ProjectDescription NVARCHAR(760),
 	CityCode INT,
 	ZipCode INT,
